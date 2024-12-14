@@ -1,0 +1,26 @@
+/* Basic styling for the page */
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    height: 200vh; 
+}
+#back-to-top {
+    position: fixed; 
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;  
+}
+window.onscroll = function() {
+    scrollFunction();
+};
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("back-to-top").style.display = "block";
+    } else {
+        document.getElementById("back-to-top").style.display = "none";
+    }
+}
