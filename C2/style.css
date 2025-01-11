@@ -1,0 +1,54 @@
+/* style.css */
+
+body {
+    font-family: sans-serif; /* Phông chữ mặc định */
+    line-height: 1.6; /* Khoảng cách dòng */
+    background-color: #f8f9fa; /* Màu nền nhạt */
+}
+
+.navbar {
+    margin-bottom: 20px; /* Khoảng cách dưới navbar */
+}
+
+.card {
+    margin-bottom: 20px; /* Khoảng cách giữa các card */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho card */
+    transition: transform 0.2s; /* Hiệu ứng hover */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Nhấc card lên khi hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Đổ bóng đậm hơn khi hover */
+}
+
+.card-img-top {
+    object-fit: cover; /* Đảm bảo ảnh vừa vặn trong card */
+    height: 200px; /* Chiều cao cố định cho ảnh */
+}
+
+.card-title {
+    font-weight: bold; /* In đậm tiêu đề */
+}
+
+.container {
+    max-width: 960px; /* Giới hạn chiều rộng container */
+}
+
+/* Kiểu dáng cho trang chi tiết */
+#anhChiTiet {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Kiểu dáng cho thông báo */
+.alert {
+    margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 150px; /* Giảm chiều cao ảnh trên thiết bị nhỏ */
+    }
+}

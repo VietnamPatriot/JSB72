@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chi tiết tin tức</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages/chi-tiet.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Tin tức</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gui-tin.html">Gửi tin tức</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h1 id="tieuDe"></h1>
+                <img id="anhChiTiet" src="" alt="Ảnh chi tiết" class="img-fluid mb-3">
+                <div class="news-content" id="noiDung"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+
+        const tinTuc = {
+            1: { tieuDe: "Tiêu đề tin 1", anh: "https://tse3.mm.bing.net/th?id=OIP.QeoVstdHXQtLNWFFvcN7BQHaFj&pid=Api&P=0&h=180", noiDung: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.thể bao gồm nhiều đoạn văn, hình ảnh, video, v.v. để cung cấp đầy đủ thông tin cho người đọc. Hãy nhớ rằng đây chỉ là dữ liệu mẫu. Hãy thay thế bằng dữ liệu thật của bạn." },
+            2: { tieuDe: "Tiêu đề tin 2", anh: "https://tse3.mm.bing.net/th?id=OIP.QeoVstdHXQtLNWFFvcN7BQHaFj&pid=Api&P=0&h=180", noiDung: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.ục 3" },
+            3: { tieuDe: "Tiêu đề tin 3", anh: "https://tse3.mm.bing.net/th?id=OIP.QeoVstdHXQtLNWFFvcN7BQHaFj&pid=Api&P=0&h=180", noiDung: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." },
+            4: { tieuDe: "Tin tức số 4", anh: "https://tse3.mm.bing.net/th?id=OIP.QeoVstdHXQtLNWFFvcN7BQHaFj&pid=Api&P=0&h=180", noiDung: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." },
+            5: { tieuDe: "Tiêu đề 5", anh: "https://tse3.mm.bing.net/th?id=OIP.QeoVstdHXQtLNWFFvcN7BQHaFj&pid=Api&P=0&h=180", noiDung: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." },
+            6: { tieuDe: "Tin tức 6", anh: "https://tse3.mm.bing.net/th?id=OIP.QeoVstdHXQtLNWFFvcN7BQHaFj&pid=Api&P=0&h=180", noiDung: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." },
+            7: { tieuDe: "Số 7", anh: "https://tse3.mm.bing.net/th?id=OIP.QeoVstdHXQtLNWFFvcN7BQHaFj&pid=Api&P=0&h=180", noiDung: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." },
+            8: { tieuDe: "Tiêu đề 8", anh: "https://tse3.mm.bing.net/th?id=OIP.QeoVstdHXQtLNWFFvcN7BQHaFj&pid=Api&P=0&h=180", noiDung: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." },
+            9: { tieuDe: "Tin tức thứ 9", anh: "https://tse3.mm.bing.net/th?id=OIP.QeoVstdHXQtLNWFFvcN7BQHaFj&pid=Api&P=0&h=180", noiDung: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." },
+            10: { tieuDe: "Tiêu đề cuối cùng", anh: "https://tse3.mm.bing.net/th?id=OIP.QeoVstdHXQtLNWFFvcN7BQHaFj&pid=Api&P=0&h=180", noiDung: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.." },
+        };
+
+        if (tinTuc[id]) {
+            document.getElementById("tieuDe").textContent = tinTuc[id].tieuDe;
+            document.getElementById("anhChiTiet").src = tinTuc[id].anh;
+            document.getElementById("noiDung").textContent = tinTuc[id].noiDung;
+        } else {
+            document.getElementById("tieuDe").textContent = "Không tìm thấy tin tức";
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
